@@ -123,7 +123,47 @@
                     <view key="view" contentMode="scaleToFill" id="UeG-PT-ajt">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="poe-XE-8FA">
+                                <rect key="frame" x="57" y="124" width="300" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="hSr-s6-xls"/>
+                                </constraints>
+                                <state key="normal" title="ライブラリ" backgroundImage="btn"/>
+                                <connections>
+                                    <action selector="handleLibraryButton:" destination="w66-Iu-DRh" eventType="touchUpInside" id="gGs-5Y-lDN"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tTE-6c-sUM">
+                                <rect key="frame" x="57" y="174" width="300" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="Kfx-Zu-MDg"/>
+                                </constraints>
+                                <state key="normal" title="カメラ" backgroundImage="btn"/>
+                                <connections>
+                                    <action selector="handleCameraButton:" destination="w66-Iu-DRh" eventType="touchUpInside" id="XyI-Me-cYO"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HEw-PV-cLf">
+                                <rect key="frame" x="57" y="224" width="300" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="Q7Y-45-DgY"/>
+                                </constraints>
+                                <state key="normal" title="キャンセル" backgroundImage="btn"/>
+                                <connections>
+                                    <action selector="handleCancelButton:" destination="w66-Iu-DRh" eventType="touchUpInside" id="wBs-mA-umH"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="HEw-PV-cLf" firstAttribute="top" secondItem="tTE-6c-sUM" secondAttribute="bottom" constant="10" id="64y-UD-YKx"/>
+                            <constraint firstItem="poe-XE-8FA" firstAttribute="centerX" secondItem="UeG-PT-ajt" secondAttribute="centerX" id="6UG-A2-MNN"/>
+                            <constraint firstItem="HEw-PV-cLf" firstAttribute="centerX" secondItem="UeG-PT-ajt" secondAttribute="centerX" id="nDO-MO-xkK"/>
+                            <constraint firstItem="tTE-6c-sUM" firstAttribute="centerX" secondItem="UeG-PT-ajt" secondAttribute="centerX" id="vJG-U6-f8u"/>
+                            <constraint firstItem="tTE-6c-sUM" firstAttribute="top" secondItem="poe-XE-8FA" secondAttribute="bottom" constant="10" id="wwU-HG-SZQ"/>
+                            <constraint firstItem="poe-XE-8FA" firstAttribute="top" secondItem="XL0-bD-hZM" secondAttribute="top" constant="80" id="x3X-na-hSs"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="XL0-bD-hZM"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="投稿" image="camera" id="2ut-Qs-qXH"/>
