@@ -10,6 +10,14 @@ import UIKit
 
 class CommentViewController: UIViewController {
     
+    @IBOutlet weak var commentTextField: UITextField!
+    
+    @IBAction func commentAddButton(_ sender: Any) {
+    }
+    
+    @IBAction func commentCancelButton(_ sender: Any) {
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }

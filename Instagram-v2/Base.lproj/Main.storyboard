@@ -138,6 +138,9 @@
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="43S-Y3-T8M"/>
                                 </constraints>
                                 <state key="normal" title="投稿" backgroundImage="btn"/>
+                                <connections>
+                                    <action selector="commentAddButton:" destination="BWM-3R-GSL" eventType="touchUpInside" id="uPi-kr-ceO"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FmL-pk-cDn">
                                 <rect key="frame" x="57" y="218" width="300" height="40"/>
@@ -145,6 +148,9 @@
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="TP3-zl-wmB"/>
                                 </constraints>
                                 <state key="normal" title="キャンセル" backgroundImage="btn"/>
+                                <connections>
+                                    <action selector="commentCancelButton:" destination="BWM-3R-GSL" eventType="touchUpInside" id="UVf-Me-bDC"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -158,6 +164,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Jcl-bm-xPi"/>
                     </view>
+                    <connections>
+                        <outlet property="commentTextField" destination="fis-t0-lbw" id="xR1-vS-eSN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vh4-25-T0b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
