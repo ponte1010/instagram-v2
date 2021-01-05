@@ -15,6 +15,7 @@ class PostData: NSObject {
     var caption: String?
     var date: Date?
     var likes: [String] = []
+    var comments: [String] = []
     var isLiked: Bool = false
     
     init(document: QueryDocumentSnapshot) {
@@ -32,6 +33,11 @@ class PostData: NSObject {
         if let likes = postDic["likes"] as? [String] {
             self.likes = likes
         }
+        
+        if let comments = postDic["comments"] as? [String] {
+            self.comments = comments
+        }
+        
         if let myid = Auth.auth().currentUser?.uid {
             // likesの配列の中にmyidが含まれているかチェックすることで、自分がいいねを押しているかを判断
             if self.likes.firstIndex(of: myid) != nil {

@@ -45,10 +45,6 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ug0-jB-5Ig">
-                        <rect key="frame" x="126" y="319" width="168" height="40"/>
-                        <state key="normal" title="コメントを追加" backgroundImage="btn"/>
-                    </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8vZ-fv-Mza">
                         <rect key="frame" x="26" y="399.5" width="268" height="20.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -61,6 +57,10 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ug0-jB-5Ig">
+                        <rect key="frame" x="126" y="319" width="168" height="40"/>
+                        <state key="normal" title="コメントを追加" backgroundImage="btn"/>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="bottomMargin" secondItem="oXF-lg-CCr" secondAttribute="bottom" constant="10" id="1um-Bk-d7U"/>
@@ -88,7 +88,9 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="captionLabel" destination="yln-L0-WSt" id="2rj-GH-Z4X"/>
+                <outlet property="commentButton" destination="ug0-jB-5Ig" id="05D-8g-x1f"/>
                 <outlet property="dateLabel" destination="oXF-lg-CCr" id="Z2C-Lu-8jt"/>
+                <outlet property="displayCommentLabel" destination="8vZ-fv-Mza" id="IPh-I4-PWR"/>
                 <outlet property="likeButton" destination="7O6-xl-0Vw" id="qQw-EG-I3l"/>
                 <outlet property="likeLabel" destination="3gh-m9-dqt" id="XSa-aK-Isc"/>
                 <outlet property="postImageView" destination="pzy-rp-P9b" id="MM3-Fe-EQd"/>

@@ -19,6 +19,8 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     // Firestoreのリスナー
     var listener: ListenerRegistration!
     
+    var selectedPostData: PostData?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -75,13 +77,16 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! PostTableViewCell
         cell.setPostData(postArray[indexPath.row])
         
-        // セル内のボタンのアクションをソースコードで設定する
+        // セル内のいいねボタンのアクションをソースコードで設定する
         cell.likeButton.addTarget(self, action:#selector(handleButton(_:forEvent:)), for: .touchUpInside)
+        
+        // セル内のコメント追加ボタンのアクションをソースコードで設定する
+        cell.commentButton.addTarget(self, action: #selector(handleCommentButton(_:forEvent:)), for: .touchUpInside)
         
         return cell
     }
     
-    // セル内のボタンがタップされた時に呼ばれるメソッド
+    // セル内のいいねボタンがタップされた時に呼ばれるメソッド
     @objc func handleButton(_ sender: UIButton, forEvent event: UIEvent) {
         print("DEBUG_PRINT: likeボタンがタップされました。")
         
@@ -108,5 +113,28 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             let postRef = Firestore.firestore().collection(Const.PostPath).document(postData.id)
             postRef.updateData(["likes": updateValue])
         }
+    }
+    
+    // セル内のコメント追加ボタンがタップされた時に呼ばれるメソッド
+    @objc func handleCommentButton(_ sender: UIButton, forEvent event: UIEvent) {
+        print("DEBUG_PRINT: commentボタンがタップされました。")
+        
+        // タップされたセルのインデックスを求める
+        let touch = event.allTouches?.first
+        let point = touch!.location(in: self.tableView)
+        let indexPath = tableView.indexPathForRow(at: point)
+        
+        // 配列からタップされたインデックスのデータを取り出す
+        let postData = postArray[indexPath!.row]
+        self.selectedPostData = postData
+        
+        // コメント追加画面に遷移
+        self.performSegue(withIdentifier: "toComment", sender: self)
+    }
+    
+    // selectedPostDataを送る
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?){
+        let commentViewController:CommentViewController = segue.destination as! CommentViewController
+        commentViewController.commentData = self.selectedPostData
     }
 }

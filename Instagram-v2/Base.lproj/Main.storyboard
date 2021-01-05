@@ -110,22 +110,23 @@
                     <tabBarItem key="tabBarItem" title="ホーム" image="home" id="CVN-vv-uyC"/>
                     <connections>
                         <outlet property="tableView" destination="Req-lN-vgy" id="SwI-oh-ivC"/>
+                        <segue destination="BWM-3R-GSL" kind="show" identifier="toComment" id="xe9-xZ-atQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7nK-O6-7I8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-855" y="852"/>
         </scene>
-        <!--Comment View Controller-->
+        <!--コメント-->
         <scene sceneID="aCn-g6-YE0">
             <objects>
-                <viewController storyboardIdentifier="Comment" id="BWM-3R-GSL" customClass="CommentViewController" customModule="Instagram_v2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Comment" title="コメント" id="BWM-3R-GSL" customClass="CommentViewController" customModule="Instagram_v2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hkB-FQ-bGl">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="コメントを入力" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fis-t0-lbw">
-                                <rect key="frame" x="57" y="124" width="300" height="34"/>
+                                <rect key="frame" x="57" y="80" width="300" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="6Yw-fL-1hh"/>
                                 </constraints>
@@ -133,7 +134,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y3j-jT-ZhL">
-                                <rect key="frame" x="57" y="168" width="300" height="40"/>
+                                <rect key="frame" x="57" y="124" width="300" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="43S-Y3-T8M"/>
                                 </constraints>
@@ -143,7 +144,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FmL-pk-cDn">
-                                <rect key="frame" x="57" y="218" width="300" height="40"/>
+                                <rect key="frame" x="57" y="174" width="300" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="TP3-zl-wmB"/>
                                 </constraints>
@@ -164,6 +165,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Jcl-bm-xPi"/>
                     </view>
+                    <navigationItem key="navigationItem" id="PRb-6V-3aP"/>
                     <connections>
                         <outlet property="commentTextField" destination="fis-t0-lbw" id="xR1-vS-eSN"/>
                     </connections>
